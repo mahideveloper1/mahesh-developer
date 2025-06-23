@@ -28,6 +28,15 @@ interface QuickAction {
 }
 
 const Contact: React.FC = () => {
+    const downloadResume = (): void => {
+        const link = document.createElement('a');
+        link.href = '/resume.pdf';
+        link.download = 'Mahesh_Vashisth_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+    
     const contactInfo: ContactInfo[] = [
         {
             icon: Phone,
@@ -43,7 +52,7 @@ const Contact: React.FC = () => {
             value: "Maheshvashisth1111@gmail.com",
             href: "mailto:Maheshvashisth1111@gmail.com",
             color: "from-blue-500 to-cyan-600",
-            description: "I&apos;ll respond within 24 hours"
+            description: "I'll respond within 24 hours"
         },
         {
             icon: MapPin,
@@ -83,7 +92,7 @@ const Contact: React.FC = () => {
         {
             icon: Coffee,
             title: "Schedule a Coffee Chat",
-            description: "Let&apos;s discuss your project over a virtual coffee",
+            description: "Let's discuss your project over a virtual coffee",
             action: "Book Meeting",
             color: "from-amber-500 to-orange-600"
         },
@@ -115,7 +124,7 @@ const Contact: React.FC = () => {
                             Get In Touch
                         </h1>
                         <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                            Ready to bring your ideas to life? Let&apos;s collaborate and create something amazing together. I&apos;m always excited to work on innovative projects!
+                            Ready to bring your ideas to life? Let's collaborate and create something amazing together. I'm always excited to work on innovative projects!
                         </p>
                     </div>
 
@@ -185,7 +194,10 @@ const Contact: React.FC = () => {
                                                 <h4 className="text-white font-semibold mb-2">{action.title}</h4>
                                                 <p className="text-gray-400 text-sm">{action.description}</p>
                                             </div>
-                                            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-300">
+                                            <button 
+                                                onClick={action.title === "Download Resume" ? downloadResume : undefined}
+                                                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-300"
+                                            >
                                                 {action.action}
                                             </button>
                                         </div>
@@ -200,7 +212,7 @@ const Contact: React.FC = () => {
                         <h3 className="text-2xl font-bold text-white mb-4">Ready to Start Your Project?</h3>
                         <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
                             Whether you need a full-stack web application, AI integration, or blockchain development, 
-                            I&apos;m here to turn your vision into reality. Let&apos;s build something extraordinary together!
+                            I'm here to turn your vision into reality. Let's build something extraordinary together!
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a 

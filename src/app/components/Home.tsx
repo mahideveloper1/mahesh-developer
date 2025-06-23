@@ -1,12 +1,27 @@
 import React from 'react';
 import Image from 'next/image';
 import { Download, Mail } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
-const Home = () => {
+const Home: React.FC = () => {
+    const router = useRouter();
+
+    const downloadResume = (): void => {
+        const link = document.createElement('a');
+        link.href = '/resume.pdf';
+        link.download = 'Mahesh_Vashisth_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    const goToContact = (): void => {
+        router.push('?section=contact', { scroll: false });
+    };
+
     return (
         <div className="min-h-screen bg-gradient-to-r from-slate-800 via-blue-900 to-slate-800">
             <div className="container mx-auto px-6 py-12">
-
 
                 {/* About Me Section */}
                 <div className="relative">
@@ -33,7 +48,7 @@ const Home = () => {
                     </div>
 
                     {/* Status Badge */}
-                    <div className="relative z-10 inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-8">
+                    <div className="relative z-10 inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-8 mt-16 lg:mt-0">
                         <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                         Available for opportunities
                     </div>
@@ -53,8 +68,8 @@ const Home = () => {
                                     Passionate Full Stack Developer with <span className="font-semibold text-blue-400">2 years of experience</span> in building
                                     and deploying scalable web applications. I specialize in creating robust backend systems with
                                     <span className="font-semibold text-blue-400"> Node.js</span> and <span className="font-semibold text-blue-400">Express.js</span>,
-                                    coupled with modern frontend experiences using <span className="font-semibold text-blue-400">React</span> and
-                                    <span className="font-semibold text-blue-400">Next.js</span>.
+                                    coupled with modern frontend experiences using <span className="font-semibold text-blue-400">React</span> and  
+                                      <span className="font-semibold text-blue-400"> Next.js</span>.
                                 </p>
                             </div>
 
@@ -95,11 +110,17 @@ const Home = () => {
 
                             {/* Action Buttons */}
                             <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                                <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg">
+                                <button 
+                                    onClick={downloadResume}
+                                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
+                                >
                                     <Download size={20} />
                                     Download Resume
                                 </button>
-                                <button className="border-2 border-gray-400 text-gray-300 hover:bg-gray-700/50 hover:text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2">
+                                <button 
+                                    onClick={goToContact}
+                                    className="border-2 border-gray-400 text-gray-300 hover:bg-gray-700/50 hover:text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
+                                >
                                     <Mail size={20} />
                                     Get In Touch
                                 </button>
@@ -130,11 +151,7 @@ const Home = () => {
                                         priority
                                     />
                                 </div>
-
-
                             </div>
-
-
                         </div>
 
                     </div>
@@ -168,7 +185,7 @@ const Home = () => {
                 <div className="grid md:grid-cols-3 gap-6 mt-12">
 
                     <div className="bg-black/40 backdrop-blur-sm p-6 rounded-xl border border-slate-700/40 text-center">
-                        <div className="text-3xl font-bold text-blue-400 mb-2">2+</div>
+                        <div className="text-3xl font-bold text-blue-400 mb-2">2</div>
                         <div className="text-slate-300 font-medium">Years Experience</div>
                     </div>
 
