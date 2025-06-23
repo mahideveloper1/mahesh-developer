@@ -1,103 +1,98 @@
-import Image from "next/image";
+'use client'
+import React, { useState, useEffect, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import Sidebar from './components/Sidebar';
+import Home from './components/Home';
+import Skills from './components/Skills';
+import Experience from './components/Experience';
+import Contact from './components/Contact';
+import Blogs from './components/Blog';
+import Projects from './components/Projects';
+import Resume from './components/Resume';
 
-export default function Home() {
+// Define the section type
+type Section = 'about' | 'skills' | 'experience' | 'projects' | 'services' | 'resume' | 'contact' | 'blogs';
+
+// Loading component
+const LoadingSpinner = () => (
+  <div className="min-h-screen bg-gradient-to-r from-slate-800 via-blue-900 to-slate-800 flex items-center justify-center">
+    <div className="text-white text-xl">Loading...</div>
+  </div>
+);
+
+// Component that uses useSearchParams - must be wrapped in Suspense
+const PageContent: React.FC = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [activeSection, setActiveSection] = useState<Section>('about');
+
+  // Get section from URL params
+  useEffect(() => {
+    const section = searchParams.get('section') as Section;
+    const validSections: Section[] = ['about', 'skills', 'experience', 'projects', 'services', 'resume', 'contact', 'blogs'];
+    
+    if (section && validSections.includes(section)) {
+      setActiveSection(section);
+    } else {
+      setActiveSection('about');
+    }
+  }, [searchParams]);
+
+  // Function to change section
+  const changeSection = (section: Section): void => {
+    setActiveSection(section);
+    router.push(`?section=${section}`, { scroll: false });
+  };
+
+  // Function to render the active section
+  const renderActiveSection = (): React.ReactElement => {
+    switch (activeSection) {
+      case 'about':
+        return <Home />;
+      case 'skills':
+        return <Skills />;
+      case 'experience':
+        return <Experience/>;
+        
+      case 'projects':
+        return <Projects/>
+      case 'services':
+        return (
+          <div className="min-h-screen bg-gradient-to-r from-slate-800 via-blue-900 to-slate-800 flex items-center justify-center">
+            <div className="text-white text-2xl">Services Section - Coming Soon</div>
+          </div>
+        );
+      case 'resume':
+        return <Resume/>
+      case 'contact':
+        return <Contact/>
+      case 'blogs':
+        return <Blogs/>
+      default:
+        return <Home />;
+    }
+  };
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+    <div className="min-h-screen transition-colors duration-300">
+      {/* Sidebar Component - Pass changeSection function */}
+      <Sidebar activeSection={activeSection} changeSection={changeSection} />
+      
+      {/* Main Content Area */}
+      <main className="lg:ml-64">
+        {renderActiveSection()}
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
-}
+};
+
+// Main Page component with Suspense wrapper
+const Page: React.FC = () => {
+  return (
+    <Suspense fallback={<LoadingSpinner />}>
+      <PageContent />
+    </Suspense>
+  );
+};
+
+export default Page;
