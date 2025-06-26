@@ -3,33 +3,13 @@ import { Calendar, MapPin, Briefcase, Users, Code, Zap, CheckCircle, ArrowRight 
 
 const Experience = () => {
     const experiences = [
+        
         {
             id: 1,
-            position: "Full Stack Developer & Team Lead",
-            company: "Lzycrazy Pvt Ltd",
-            type: "Full-time",
-            duration: "June 2025 - Present",
-            location: "Remote",
-            status: "current",
-            description: "Leading a dynamic development team while architecting scalable full-stack solutions. Responsible for end-to-end project delivery, code quality assurance, and technical mentorship.",
-            responsibilities: [
-                "Project leadership and strategic planning for multiple concurrent projects",
-                "Code review and quality assurance across frontend and backend systems", 
-                "Architected and led end-to-end delivery of multiple full-stack projects, managing timelines, technical direction, and cross-functional coordination.",
-                "Designed and maintained robust automated test suites (unit, integration, E2E) using Jest, Cypress, and Playwright; integrated CI/CD pipelines via GitHub Actions and Docker.",
-                "Developing applications using React, Next.js, Node.js/Express, PostgreSQL, and Supabase, deploying on platforms like Vercel and AWS.",
-                "Translated client requirements into scalable technical solutions, creating technical specs, wireframes, and rapid prototypes to ensure alignment and delivery speed.y"
-            ],
-            skills: ["Team Leadership", "Project Management", "Full Stack Development", "AWS", "CI/CD", "Next.js", "Typescript" , "Javascript" , "PostgresSql" , "MonogoDB", "Testing", "Javascript" , "Node.js"],
-            icon: Users,
-            color: "from-purple-500 to-indigo-600"
-        },
-        {
-            id: 2,
             position: "Full Stack Developer",
             company: "Stacklab", 
             type: "Full-time",
-            duration: "October 2023 - June 2025",
+            duration: "October 2023 - Present",
             location: "Remote",
             status: "completed",
             description: "Developed and maintained high-performance web applications with seamless user experiences. Collaborated closely with backend teams to ensure optimal data flow and application reliability.",
@@ -46,7 +26,7 @@ const Experience = () => {
             color: "from-blue-500 to-cyan-600"
         },
         {
-            id: 3,
+            id: 2,
             position: "React Developer Intern",
             company: "Harman International",
             type: "Internship",
@@ -182,38 +162,7 @@ const Experience = () => {
                     </div>
 
                     {/* Career Growth Section */}
-                    <div className="mt-16 bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-blue-700/30 shadow-2xl">
-                        <h3 className="text-2xl font-bold text-white mb-8 text-center">Career Progression</h3>
-                        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-                            <div className="text-center">
-                                <div className="bg-gradient-to-br from-green-500 to-emerald-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                                    <Briefcase className="w-8 h-8 text-white" />
-                                </div>
-                                <h4 className="font-semibold text-white mb-2">React Developer Intern</h4>
-                                <p className="text-gray-400 text-sm">Learning & Growth</p>
-                            </div>
-                            
-                            <ArrowRight className="w-6 h-6 text-blue-400 rotate-90 md:rotate-0" />
-                            
-                            <div className="text-center">
-                                <div className="bg-gradient-to-br from-blue-500 to-cyan-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                                    <Code className="w-8 h-8 text-white" />
-                                </div>
-                                <h4 className="font-semibold text-white mb-2">Full Stack Developer</h4>
-                                <p className="text-gray-400 text-sm">Technical Excellence</p>
-                            </div>
-                            
-                            <ArrowRight className="w-6 h-6 text-blue-400 rotate-90 md:rotate-0" />
-                            
-                            <div className="text-center">
-                                <div className="bg-gradient-to-br from-purple-500 to-indigo-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                                    <Users className="w-8 h-8 text-white" />
-                                </div>
-                                <h4 className="font-semibold text-white mb-2">Team Lead & Developer</h4>
-                                <p className="text-gray-400 text-sm">Leadership & Innovation</p>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
