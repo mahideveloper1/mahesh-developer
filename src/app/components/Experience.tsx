@@ -3,14 +3,33 @@ import { Calendar, MapPin, Briefcase, Code, Zap, CheckCircle } from 'lucide-reac
 
 const Experience = () => {
     const experiences = [
+         {
+            id: 1,
+            position: "Full Stack Developer",
+            company: "Pitchline", 
+            type: "Full-time",
+            duration: "June 2025 - Present",
+            location: "Remote",
+            status: "completed",
+            description: "Developed an AI-powered sales automation platform, building scalable RESTful and WebSocket APIs with Node.js, Express.js",
+            responsibilities: [
+                "Developed and optimized backend architecture integrating RESTful and WebSocket APIs using Node.js, Express.js, ensuring low-latency, real-time data exchange for AI-driven applications.",
+                "Worked on data handling and caching performance by integrating Redis alongside PostgreSQL for high-throughput operations.",
+                "Implemented dynamic React.js interfaces enabling real-time AI–client interactions and seamless user experiences.",
+                "Deployed and maintained cloud infrastructure on AWS (EC2, S3, Lambda) ensuring scalability, uptime, and reliability."
+            ],
+            skills: ["React.js", "Node.js", "Restful APIs", "AWS", "CI/CD", "Websockets", "Typescript" , "Javascript" , "PostgresSql" , "Elevenlabs"],
+            icon: Briefcase,
+            color: "from-blue-500 to-cyan-600"
+        },
         
         {
-            id: 1,
+            id: 2,
             position: "Full Stack Developer",
             company: "Stacklab", 
             type: "Full-time",
-            duration: "October 2023 - Present",
-            location: "Remote",
+            duration: "October 2023 - May 2025",
+            location: "Hybrid",
             status: "completed",
             description: "Developed and maintained high-performance web applications with seamless user experiences. Collaborated closely with backend teams to ensure optimal data flow and application reliability.",
             responsibilities: [
@@ -26,7 +45,7 @@ const Experience = () => {
             color: "from-blue-500 to-cyan-600"
         },
         {
-            id: 2,
+            id: 3,
             position: "React Developer Intern",
             company: "Harman International",
             type: "Internship",
