@@ -19,7 +19,7 @@ const Skills = () => {
             category: "Databases",
             icon: Database,
             color: "from-green-500 to-green-600", 
-            skills: ["MongoDB", "PostgreSQL", "MySQL", "DynamoDB", "Redis", "SQL"]
+            skills: ["MongoDB", "PostgreSQL", "MySQL", "DynamoDB", "Redis", "SQLAlchemy"]
         },
         {
             category: "DevOps & Cloud",

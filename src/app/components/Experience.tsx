@@ -11,14 +11,14 @@ const Experience = () => {
             duration: "June 2025 - Present",
             location: "Remote",
             status: "completed",
-            description: "Developed an AI-powered sales automation platform, building scalable RESTful and WebSocket APIs with Node.js, Express.js",
+            description: "Developed an AI-native SDR automation system with Python FastAPI, integrating LLM-based reasoning, contextual conversation management, and scalable REST/WebSocket interfaces for autonomous sales outreach.",
             responsibilities: [
-                "Developed and optimized backend architecture integrating RESTful and WebSocket APIs using Node.js, Express.js, ensuring low-latency, real-time data exchange for AI-driven applications.",
+                "Developed and optimized backend architecture integrating RESTful and WebSocket APIs using Python FastAPI, ensuring low-latency, real-time data exchange for AI-driven applications.",
                 "Worked on data handling and caching performance by integrating Redis alongside PostgreSQL for high-throughput operations.",
                 "Implemented dynamic React.js interfaces enabling real-time AI–client interactions and seamless user experiences.",
                 "Deployed and maintained cloud infrastructure on AWS (EC2, S3, Lambda) ensuring scalability, uptime, and reliability."
             ],
-            skills: ["React.js", "Node.js", "Restful APIs", "AWS", "CI/CD", "Websockets", "Typescript" , "Javascript" , "PostgresSql" , "Elevenlabs"],
+            skills: ["React.js", "FastAPI", "Python", "Restful APIs", "AWS", "CI/CD", "Websockets", "Typescript" , "Javascript" , "PostgresSql" , "SQLAlchemy", "Elevenlabs"],
             icon: Briefcase,
             color: "from-blue-500 to-cyan-600"
         },
@@ -40,7 +40,7 @@ const Experience = () => {
                 "Collaborated in agile development cycles with cross-functional teams",
                 "Participated in architecture decisions for scalable application design"
             ],
-            skills: ["React.js", "Node.js", "API Integration", "AWS", "CI/CD", "Next.js", "Typescript" , "Javascript" , "PostgresSql" , "MonogoDB"],
+            skills: ["React.js", "Python", "Node.js", "API Integration", "AWS", "CI/CD", "Next.js", "Typescript" , "Javascript" , "PostgresSql" , "MonogoDB"],
             icon: Code,
             color: "from-blue-500 to-cyan-600"
         },
@@ -61,7 +61,7 @@ const Experience = () => {
                 "Contributed to bug fixes and feature implementations in production applications",
                 "Collaborated with UI/UX designers to implement pixel-perfect interfaces"
             ],
-            skills: ["React.js", "JavaScript", "API Integration", "Performance Optimization", "Enterprise Development"],
+            skills: ["React.js", "JavaScript", "Node.js", "Express.js", "API Integration", "Performance Optimization", "Enterprise Development"],
             icon: Briefcase,
             color: "from-green-500 to-emerald-600"
         }
