@@ -29,24 +29,8 @@ export default function RootLayout({
       >
         {children}
 
-        {/* ConvAI Widget */}
-        {/* @ts-ignore */}
-          <pitchline-convai
-            agent-id="agent_4301k9a90yacegf8ktnqdgkn79qq"
-            placement="bottom-right"
-            variant="compact"
-          />
-
-          <script
-            src="https://gleaming-macaron-d4c8f8.netlify.app/embed.iife.js"
-          />
-          {/* Pitch Point Buttons - using regular script tag for data attributes */}
-          <script
-            src="https://resplendent-travesseiro-e4e29a.netlify.app/pitchline-buttons.js"
-            data-website-id="ebc43547-71e5-4cf9-a973-cded0b6ada3f"
-            data-api-url=" https://expectably-hemimorphic-meredith.ngrok-free.dev"
-            async
-          />
+        ConvAI Widget
+        
       </body>
     </html>
   );
