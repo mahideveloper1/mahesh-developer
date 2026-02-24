@@ -28,7 +28,18 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-        
+        {/* @ts-ignore */}
+        <pitchline-convai 
+          agent-id="agent_2101kc8z04pae0n8bk9y811xhgyh"
+          placement="bottom-center"
+          variant="compact"/>
+        {/* </pitchline-convai> */}
+<script src="https://prismatic-sawine-36aaf9.netlify.app/embed.iife.js" async></script>
+<script 
+  src="https://gleaming-tanuki-8df730.netlify.app/pitchline-buttons.js"
+  data-api-url="http://localhost:8000"
+  async>
+</script>
       </body>
     </html>
   );

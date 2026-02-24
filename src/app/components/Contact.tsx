@@ -38,14 +38,7 @@ const Contact: React.FC = () => {
     };
     
     const contactInfo: ContactInfo[] = [
-        {
-            icon: Phone,
-            label: "Phone",
-            value: "+91 9817611481",
-            href: "tel:+919817611481",
-            color: "from-green-500 to-emerald-600",
-            description: "Availability 24/7"
-        },
+      
         {
             icon: Mail,
             label: "Email",
@@ -134,7 +127,7 @@ const Contact: React.FC = () => {
                         {/* Contact Information Cards */}
                         <div className="text-center">
                             <h2 className="text-2xl font-bold text-white mb-8">Contact Information</h2>
-                            <div className="grid md:grid-cols-3 gap-6">
+                            <div className="grid md:grid-cols-2 gap-6">
                                 {contactInfo.map((contact: ContactInfo, index: number) => (
                                     <a
                                         key={index}
