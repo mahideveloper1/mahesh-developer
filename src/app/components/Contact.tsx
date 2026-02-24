@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
             value: "Maheshvashisth1111@gmail.com",
             href: "mailto:Maheshvashisth1111@gmail.com",
             color: "from-blue-500 to-cyan-600",
-            description: "I&apos;ll respond within 24 hours"
+            description: "Respond within 24 hours"
         },
         {
             icon: MapPin,
